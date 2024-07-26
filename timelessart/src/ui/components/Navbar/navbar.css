@@ -1,0 +1,116 @@
+/* Ensure the navbar-container has a fixed width and is centered */
+.navbar-container {
+  display: flex;
+  width: 80%; /* Fixed width for the navbar container */
+  max-width: 2000px; /* Optional: Set a max-width to prevent it from becoming too wide on large screens */
+  height: 99px;
+  padding: 20px 59px;
+  margin: 0 auto; /* Center the navbar container horizontally */
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Center items horizontally */
+  box-sizing: border-box; /* Include padding in width calculation */
+  margin-top: 30px;
+}
+
+.navbar-frame {
+  display: flex;
+  width: 100%; /* Make sure it stretches to fill the navbar-container */
+  padding: 10px 40px;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 400px;
+  border: 3px solid #9b4242;
+  background: rgba(0, 0, 0, 0);
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between; /* Space out logo and links */
+  width: 100%; /* Ensure navbar takes full width of frame */
+}
+
+.logo {
+  color: #932222;
+}
+
+.links {
+  display: flex;
+  justify-content: center; /* Center links within the navbar */
+  align-items: center;
+  gap: 60px; /* Adjust gap between links */
+  flex: 1; /* Allow the links section to take up available space */
+}
+
+.links a {
+  color: var(--Ocean-dark, #1e1e1e);
+  font-family: Poppins, sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-decoration: none;
+}
+
+.links a:hover {
+  color: #d1aa29; /* Hover color for links */
+}
+.links svg {
+    margin-left: 8px; /* Adjust the spacing between the text and SVG */
+    vertical-align: middle; /* Align SVG vertically with the text */
+    width: 14px; /* Make the SVG a bit larger */
+    height: 7px; /* Adjust height proportionally */
+  }
+.rotate {
+    transform: rotate(180deg); /* Rotate the SVG */
+}
+.clickable-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer; /* Change cursor to indicate clickable */
+}
+.button-container-navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+}
+.button-navbar-inregistrare {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  background: #9b4242;
+  stroke: none;
+  border: none;
+  color: #FFF;
+  font-size: 20px;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
+
+.button-navbar-authentificare {
+  display: flex;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: var(--Corner-Small, 8px);
+  border: 2px solid #9b4242;
+  background: var(--Transparent, rgba(255, 255, 255, 0));
+  font-size: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.button-navbar-inregistrare:hover {
+    background-color: #d1aa29;
+  }
+.button-navbar-authentificare:hover{
+    background-color: #d1aa29;
+    color: #FFF;
+    border-color: #d1aa29;
+}
