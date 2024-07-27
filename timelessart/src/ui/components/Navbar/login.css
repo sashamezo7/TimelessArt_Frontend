@@ -1,0 +1,154 @@
+.modal-background {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it is above other content */
+}
+
+.login-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    width: 500px;
+    height: 500px;
+    border-radius: var(--Corner-Large, 16px);
+    background: #FFF6E3;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    padding: 25px;
+    position: relative;
+}
+
+.button-exit-login {
+    width: 30px;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    /* Use absolute positioning within the modal */
+    top: 15px;
+    /* Adjust top position */
+    left: 15px;
+    /* Adjust left position */
+    font-size: 20px;
+    line-height: 30px;
+    text-align: center;
+}
+
+.login-title {
+    width: 100%;
+    text-align: center;
+    margin: 0px;
+}
+
+.login-title p {
+    color: #000;
+    text-align: center;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+    flex-shrink: 0;
+}
+
+.input {
+    width: 480px;
+    height: 58px;
+    border: none;
+    display: flex;
+    align-items: center;
+    border-radius: 28px;
+    background: #D1AA29;
+    margin-bottom: 10px;
+    padding: 0 10px;
+
+}
+
+.input svg {
+    width: 25px;
+    height: 25px;
+    margin-right: 20px;
+    margin-left: 15px;
+}
+
+.input input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    background: none;
+    color: #FFF;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+}
+
+.input input::placeholder {
+    color: #FFF;
+    text-align: left;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+    position: relative;
+}
+
+.text-login-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
+.text-login {
+    color: #9B4242;
+    text-align: center;
+    font-family: Actor;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}
+.text-login:hover{
+    color: #d1aa29;
+}
+
+.button-login {
+    width: 252px;
+    height: 45px;
+    flex-shrink: 0;
+    border-radius: var(--Corner-Small, 8px);
+    background: #9B4242;
+    color: #FFF;
+    text-align: center;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 24px;
+    font-style: normal;
+    line-height: normal;
+    border: none;
+    cursor: pointer;
+    margin-top: 20px;
+}
+.button-login:hover{
+    background-color: #d1aa29;
+}

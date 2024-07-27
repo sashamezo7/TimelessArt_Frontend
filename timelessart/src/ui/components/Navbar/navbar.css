@@ -78,7 +78,7 @@
   align-items: center;
   gap: 22px;
 }
-.button-navbar-inregistrare {
+.button-navbar-signin {
   display: flex;
   padding: 10px 20px;
   justify-content: center;
@@ -93,7 +93,7 @@
   cursor: pointer;
 }
 
-.button-navbar-authentificare {
+.button-navbar-login {
   display: flex;
   padding: 10px 20px;
   justify-content: center;
@@ -106,10 +106,10 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
-.button-navbar-inregistrare:hover {
+.button-navbar-signin:hover {
     background-color: #d1aa29;
   }
-.button-navbar-authentificare:hover{
+.button-navbar-login:hover{
     background-color: #d1aa29;
     color: #FFF;
     border-color: #d1aa29;
