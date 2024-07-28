@@ -3,10 +3,13 @@ import "./navbar.css";
 import { Link } from "react-router-dom";
 import Login from "./Login";
 import "./login.css"
+import Signin from "./Signin";
 
 const Navbar = () => {
   const [isRotated, setIsRotated] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSigninOpen, setIsSigninOpen] = useState(false);
+
 
   const handleClick = () => {
     setIsRotated(!isRotated);
@@ -15,7 +18,8 @@ const Navbar = () => {
 
   return (
     <>
-    {isLoginOpen && <Login closeLogin={setIsLoginOpen}/>}
+    {isLoginOpen && <Login closeLogin={setIsLoginOpen} closeSignin={setIsSigninOpen}/>}
+    {isSigninOpen && <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen}/>}
       <div className="navbar-container">
         <div className="navbar-frame">
           <nav className="navbar">
@@ -51,13 +55,8 @@ const Navbar = () => {
               <Link to="/contact">Contact</Link>
             </div>
             <div className="button-container-navbar">
-              <button className="button-navbar-signin">Înregistrare</button>
-              <button
-                className="button-navbar-login"
-                onClick={() => {setIsLoginOpen(true);}}
-              >
-                Autentificare
-              </button>
+              <button className="button-navbar-signin" onClick={() => {setIsSigninOpen(true)}}>Înregistrare</button>
+              <button className="button-navbar-login"onClick={() => {setIsLoginOpen(true)}}>Autentificare</button>
             </div>
           </nav>
         </div>
