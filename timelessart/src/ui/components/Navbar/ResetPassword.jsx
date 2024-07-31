@@ -3,7 +3,7 @@ import "./resetPassword.css";
 import '../../../util/i18n'
 import { useTranslation } from 'react-i18next';
 
-const ResetPassword = ({closeResetPassword}) => {
+const ResetPassword = ({closeResetPassword, closeCheckEmailMessage}) => {
 
   const [email, setEmail] = useState('');
   const {t, i18n} = useTranslation();
@@ -33,7 +33,7 @@ const ResetPassword = ({closeResetPassword}) => {
             />
           </div>
         </div>
-        <button className="button-reset-password">{t('signin.resetPassword')}</button>
+        <button className="button-reset-password" onClick={() => {closeCheckEmailMessage(true), closeResetPassword(false)}}>{t('signin.resetPassword')}</button>
       </div>
     </div>
   );

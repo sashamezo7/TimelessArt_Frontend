@@ -5,15 +5,18 @@ import Login from "./Login";
 import "./login.css"
 import Signin from "./Signin";
 import ResetPassword from "./ResetPassword";
+import CheckEmailMessage from "./CheckEmailMessage";
 
 import '../../../util/i18n'
 import { useTranslation } from 'react-i18next';
+import { use } from "i18next";
 
 const Navbar = () => {
   const [isRotated, setIsRotated] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSigninOpen, setIsSigninOpen] = useState(false);
   const [isResetPasswordOpen, setIsResetPasswordOpen] = useState(false);
+  const [isEmailMessageOpen, setIsEmailMessageOpen] = useState(false);
 
 
 
@@ -29,7 +32,9 @@ const Navbar = () => {
     <>
     {isLoginOpen && <Login closeLogin={setIsLoginOpen} closeSignin={setIsSigninOpen} closeResetPassword={setIsResetPasswordOpen}/>}
     {isSigninOpen && <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen}/>}
-    {isResetPasswordOpen && <ResetPassword closeResetPassword={setIsResetPasswordOpen}/>}
+    {isResetPasswordOpen && <ResetPassword closeResetPassword={setIsResetPasswordOpen} closeCheckEmailMessage={setIsEmailMessageOpen}/>}
+    {isEmailMessageOpen && <CheckEmailMessage closeCheckEmailMessage={setIsEmailMessageOpen}/>}
+
       <div className="navbar-container">
         <div className="navbar-frame">
           <nav className="navbar">
