@@ -4,3 +4,13 @@
 body {
     font-family: 'Abhaya Libre', serif;
 }
+
+:root{
+    --primary-color: #FFF6E3;
+    --secondary-color: #9B4242;
+    --thirdly-color: #d1aa29;
+    --background-color: #FFF6E3;
+    --text-color: #090909;
+    --button-color: #9B4242;
+    --hover-color: #d1aa29;
+}

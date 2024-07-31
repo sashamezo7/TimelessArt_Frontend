@@ -1,9 +1,14 @@
 import './signin.css'
-import { useState } from 'react';
+import { useState, useTransition } from 'react';
+import '../../../util/i18n'
+import { useTranslation } from 'react-i18next';
+
 const Signin = ({closeSignin, closeLogin}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
   const [password1, setPassword1] = useState('');
+  const {t, i18n} = useTranslation();
+
   return (
     <div className="modal-background">
       <div className="signin-frame">
@@ -14,7 +19,7 @@ const Signin = ({closeSignin, closeLogin}) => {
         </button>
 
         <div className="login-title">
-          <p>Inregistrare</p>
+          <p>{t('signin.createAccount')}</p>
         </div>
         <div className="inputs">
           <div className="input">
@@ -34,7 +39,7 @@ const Signin = ({closeSignin, closeLogin}) => {
             </svg>
             <input
               type="password"
-              placeholder="Parola"
+              placeholder={t('signin.password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -45,14 +50,14 @@ const Signin = ({closeSignin, closeLogin}) => {
             </svg>
             <input
               type="password"
-              placeholder="Confirmare parola"
+              placeholder={t('signin.confirmPassword')}
               value={password1}
               onChange={(e) => setPassword1(e.target.value)}
             />
           </div>
         </div>
-        <p className="text-login" onClick={() => { closeSignin(false); closeLogin(true); }}>Ai deja cont? Autentifica-te</p>
-        <button className="button-login">Autentificare</button>
+        <p className="text-login" onClick={() => { closeSignin(false); closeLogin(true); }}>{t('signin.authenticate')}</p>
+        <button className="button-login">{t('signin.createAccount')}</button>
       </div>
     </div>
   );

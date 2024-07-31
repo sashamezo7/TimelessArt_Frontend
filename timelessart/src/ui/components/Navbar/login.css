@@ -20,7 +20,7 @@
     width: 500px;
     height: 500px;
     border-radius: var(--Corner-Large, 16px);
-    background: #FFF6E3;
+    background: var(--background-color);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 25px;
     position: relative;
@@ -130,7 +130,7 @@
     cursor: pointer;
 }
 .text-login:hover{
-    color: #d1aa29;
+    color: var(--hover-color);
 }
 
 .button-login {
@@ -150,5 +150,5 @@
     margin-top: 20px;
 }
 .button-login:hover{
-    background-color: #d1aa29;
+    background-color: var(--hover-color);
 }

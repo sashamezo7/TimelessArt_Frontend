@@ -4,11 +4,20 @@ import { Link } from "react-router-dom";
 import Login from "./Login";
 import "./login.css"
 import Signin from "./Signin";
+import ResetPassword from "./ResetPassword";
+
+import '../../../util/i18n'
+import { useTranslation } from 'react-i18next';
 
 const Navbar = () => {
   const [isRotated, setIsRotated] = useState(false);
   const [isLoginOpen, setIsLoginOpen] = useState(false);
   const [isSigninOpen, setIsSigninOpen] = useState(false);
+  const [isResetPasswordOpen, setIsResetPasswordOpen] = useState(false);
+
+
+
+  const {t, i18n} = useTranslation();
 
 
   const handleClick = () => {
@@ -18,8 +27,9 @@ const Navbar = () => {
 
   return (
     <>
-    {isLoginOpen && <Login closeLogin={setIsLoginOpen} closeSignin={setIsSigninOpen}/>}
+    {isLoginOpen && <Login closeLogin={setIsLoginOpen} closeSignin={setIsSigninOpen} closeResetPassword={setIsResetPasswordOpen}/>}
     {isSigninOpen && <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen}/>}
+    {isResetPasswordOpen && <ResetPassword closeResetPassword={setIsResetPasswordOpen}/>}
       <div className="navbar-container">
         <div className="navbar-frame">
           <nav className="navbar">
@@ -27,14 +37,14 @@ const Navbar = () => {
               <h1>Logo</h1>
             </div>
             <div className="links">
-              <Link to="/">Home</Link>
-              <Link to="/about">Despre noi</Link>
+              <Link to="/">{t('navbar.home')}</Link>
+              <Link to="/about">{t('navbar.aboutUs')}</Link>
               <div
                 className="clickable-container"
                 onClick={handleClick}
               >
                 <Link to="/art">
-                  Artă
+                {t('navbar.art')}
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="14"
@@ -55,8 +65,8 @@ const Navbar = () => {
               <Link to="/contact">Contact</Link>
             </div>
             <div className="button-container-navbar">
-              <button className="button-navbar-signin" onClick={() => {setIsSigninOpen(true)}}>Înregistrare</button>
-              <button className="button-navbar-login"onClick={() => {setIsLoginOpen(true)}}>Autentificare</button>
+              <button className="button-navbar-signin" onClick={() => {setIsSigninOpen(true)}}>{t('signin.createAccount')}</button>
+              <button className="button-navbar-login"onClick={() => {setIsLoginOpen(true)}}>{t('signin.authenticate')}</button>
             </div>
           </nav>
         </div>

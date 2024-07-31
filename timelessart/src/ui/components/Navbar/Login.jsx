@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import "./login.css";
+import '../../../util/i18n'
+import { useTranslation } from 'react-i18next';
 
-const Login = ({ closeLogin, closeSignin }) => {
+const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
 
   const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('')
+  const [password, setPassword] = useState('');
+  const {t, i18n} = useTranslation();
+
   return (
     <div className="modal-background">
       <div className="login-frame">
@@ -15,7 +19,7 @@ const Login = ({ closeLogin, closeSignin }) => {
         </button>
 
         <div className="login-title">
-          <p>Autentificare</p>
+          <p>{t('signin.authenticate')}</p>
         </div>
         <div className="inputs">
           <div className="input">
@@ -35,7 +39,7 @@ const Login = ({ closeLogin, closeSignin }) => {
             </svg>
             <input
               type="password"
-              placeholder="Password"
+              placeholder={t('signin.password')}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
             />
@@ -43,10 +47,10 @@ const Login = ({ closeLogin, closeSignin }) => {
         </div>
 
         <div className="text-login-container">
-          <p className="text-login">Resetează parola</p>
-          <p className="text-login" onClick={() => {closeLogin(false), closeSignin(true)}}>Creează un cont</p>
+          <p className="text-login" onClick={() => {closeLogin(false), closeResetPassword(true)}}>{t('signin.resetPassword')}</p>
+          <p className="text-login" onClick={() => {closeLogin(false), closeSignin(true)}}>{t('signin.createAccount')}</p>
         </div>
-        <button className="button-login">Autentificare</button>
+        <button className="button-login">{t('signin.authenticate')}</button>
       </div>
     </div>
   );
