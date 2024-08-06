@@ -1,4 +1,16 @@
-/* Ensure the navbar-container has a fixed width and is centered */
+/* Red line container */
+.red-line-container {
+  width: 100%;
+  height: 2px; /* Height of the red line */
+  background-color: var(--primary-color); /* Color of the red line */
+ 
+  top: 60px; /* Adjust this value to position the line lower */
+  left: 0;
+  margin-top: 10px;
+}
+
+
+/* Navbar container */
 .navbar-container {
   display: flex;
   width: 80%; /* Fixed width for the navbar container */
@@ -10,17 +22,17 @@
   justify-content: center;
   align-items: center; /* Center items horizontally */
   box-sizing: border-box; /* Include padding in width calculation */
-  margin-top: 30px;
+
+  position: relative; /* Needed to position inner elements */
 }
 
+/* Rest of the CSS remains the same */
 .navbar-frame {
   display: flex;
   width: 100%; /* Make sure it stretches to fill the navbar-container */
   padding: 10px 40px;
   justify-content: space-between;
   align-items: center;
-  border-radius: 400px;
-  border: 3px solid var(--primary-color);
   background: rgba(0, 0, 0, 0);
 }
 
@@ -31,6 +43,7 @@
   justify-content: space-between; /* Space out logo and links */
   width: 100%; /* Ensure navbar takes full width of frame */
 }
+
 
 .logo {
   color: var(--primary-color);
@@ -74,10 +87,15 @@
 .button-container-navbar {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-end; /* Align buttons to the right */
   align-items: center;
   gap: 22px;
+  width: 100%; /* Ensure the container takes full width */
+  padding-right: 20px; /* Add padding to push buttons left from the container edge */
+  box-sizing: border-box; /* Include padding in width calculation */
 }
+
+
 .button-navbar-signin {
   display: flex;
   padding: 10px 20px;
@@ -88,7 +106,7 @@
   stroke: none;
   border: none;
   color: var(--text-color-white);
-  font-size: 20px;
+  font-size: 16px;
   transition: background-color 0.3s ease;
   cursor: pointer;
 }
@@ -102,7 +120,7 @@
   border-radius: var(--Corner-Small, 8px);
   border: 2px solid #9b4242;
   background: var(--Transparent, rgba(255, 255, 255, 0));
-  font-size: 20px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
@@ -114,3 +132,6 @@
     color: var(--text-color-white);
     border-color: var(--secondary-color);
 }
+
+
+

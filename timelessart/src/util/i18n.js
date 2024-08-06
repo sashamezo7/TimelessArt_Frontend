@@ -21,6 +21,13 @@ i18n.use(initReactI18next).init({
             home: 'Home',
             aboutUs: 'About us',
             art: 'Art',
+            exhibitions: 'Exhibitions',
+            painting: 'Painting',
+            sculpture: 'Sculpture',
+            graphics: 'Graphics',
+            photography: 'Photography',
+            other: 'Other',
+            all: 'All artworks',
         }
       }
     },
@@ -40,7 +47,15 @@ i18n.use(initReactI18next).init({
             home: 'Acasă',
             aboutUs: 'Despre noi',
             art: 'Artă',
+            exhibitions: 'Expoziții',
+            painting: 'Pictură',
+            sculpture: 'Sculptură',
+            graphics: 'Grafică',
+            photography: 'Fotografie',
+            other: 'Altele',
+            all: 'Toate operele de artă',
         }
+
       }
     }
   }
