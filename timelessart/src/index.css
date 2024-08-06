@@ -6,11 +6,10 @@ body {
 }
 
 :root{
-    --primary-color: #FFF6E3;
-    --secondary-color: #9B4242;
-    --thirdly-color: #d1aa29;
     --background-color: #FFF6E3;
-    --text-color: #090909;
-    --button-color: #9B4242;
-    --hover-color: #d1aa29;
+    --primary-color: #9B4242;
+    --secondary-color: #d1aa29;
+    --text-color-black: #090909;
+    --text-color-white: #FFF;
+
 }

@@ -56,7 +56,10 @@ const Signin = ({closeSignin, closeLogin}) => {
             />
           </div>
         </div>
-        <p className="text-login" onClick={() => { closeSignin(false); closeLogin(true); }}>{t('signin.authenticate')}</p>
+        <div className="text-login-container">
+           <p className="text-login" onClick={() => { closeSignin(false); closeLogin(true); }}>{t('signin.authenticate')}</p>
+        </div>
+       
         <button className="button-login">{t('signin.createAccount')}</button>
       </div>
     </div>

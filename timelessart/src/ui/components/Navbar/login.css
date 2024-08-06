@@ -1,7 +1,8 @@
+
 .modal-background {
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.7);
     position: fixed;
     top: 0;
     left: 0;
@@ -50,7 +51,7 @@
 }
 
 .login-title p {
-    color: #000;
+    color: var(--text-color-black);
     text-align: center;
     font-family: "Abhaya Libre ExtraBold";
     font-size: 60px;
@@ -75,7 +76,7 @@
     display: flex;
     align-items: center;
     border-radius: 28px;
-    background: #D1AA29;
+    background: var(--secondary-color);
     margin-bottom: 10px;
     padding: 0 10px;
 
@@ -94,7 +95,7 @@
     border: none;
     outline: none;
     background: none;
-    color: #FFF;
+    color: var(--text-color-white);
     font-family: "Abhaya Libre ExtraBold";
     font-size: 24px;
     font-style: normal;
@@ -102,7 +103,7 @@
 }
 
 .input input::placeholder {
-    color: #FFF;
+    color: var(--text-color-white);
     text-align: left;
     font-family: "Abhaya Libre ExtraBold";
     font-size: 24px;
@@ -117,20 +118,21 @@
     align-items: center;
     justify-content: center;
     gap: 200px;
+    margin-bottom: 10px;
 }
 
 .text-login {
-    color: #9B4242;
+    color: var(--primary-color);
     text-align: center;
     font-family: Actor;
-    font-size: 20px;
+    font-size: 24px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     cursor: pointer;
 }
 .text-login:hover{
-    color: var(--hover-color);
+    color: var(--secondary-color);
 }
 
 .button-login {
@@ -138,8 +140,8 @@
     height: 45px;
     flex-shrink: 0;
     border-radius: var(--Corner-Small, 8px);
-    background: #9B4242;
-    color: #FFF;
+    background: var(--primary-color);
+    color: var(--text-color-white);
     text-align: center;
     font-family: "Abhaya Libre ExtraBold";
     font-size: 24px;
@@ -147,8 +149,8 @@
     line-height: normal;
     border: none;
     cursor: pointer;
-    margin-top: 20px;
+    margin-top: none;
 }
 .button-login:hover{
-    background-color: var(--hover-color);
+    background-color: var(--secondary-color);
 }

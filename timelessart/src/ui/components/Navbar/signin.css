@@ -6,8 +6,9 @@
     width: 500px;
     height: 600px;
     border-radius: var(--Corner-Large, 16px);
-    background: #FFF6E3;
+    background: var(--background-color);
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 25px;
     position: relative;
 }
+
