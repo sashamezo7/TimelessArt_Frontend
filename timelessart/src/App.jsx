@@ -1,19 +1,35 @@
-import './App.css'
+import './App.css';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Navbar from './ui/components/Navbar/Navbar';
 import i18n from './util/i18n';
-
+import HomePage from './ui/pages/Home/HomePage.jsx';
+import AccountPage from './ui/pages/Account/AccountPage.jsx';
 
 function App() { 
 
-  useEffect(()=>{
-    i18n.changeLanguage(navigator.language)
+  useEffect(() => {
+    i18n.changeLanguage(navigator.language);
   }, []);
-  
+
+  const notFoundStyles = {
+    color: 'var(--primary-color)',
+    fontSize: '2.5rem',
+    textAlign: 'center',
+    marginTop: '20%',
+    fontFamily: 'Arial, sans-serif',
+    fontWeight: 'bold',
+  };
+
   return (
     <Router>
-      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/account" element={<AccountPage />} />
+        <Route
+          path="*"
+          element={<h1 style={notFoundStyles}>Page not found eror 404</h1>}
+        />
+      </Routes>
     </Router>
   );
 }

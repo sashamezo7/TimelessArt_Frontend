@@ -28,6 +28,24 @@ i18n.use(initReactI18next).init({
             photography: 'Photography',
             other: 'Other',
             all: 'All artworks',
+        },
+        account: {
+          account: 'Account',
+          password: 'Password',
+          name: 'Name',
+          surname: 'Surname',
+          email: 'Email',
+          phone: 'Phone',
+          address: 'Address',
+          city: 'City',
+          zipCode: 'Zip Code',
+          legalPerson: 'Legal person',
+          stateProvince: 'State/province',
+          country: 'Country',
+          companyName: 'Company Name',
+          vatNumber: 'VAT Number',
+          companyAddress: 'Company Address',
+          comercialRegistrationNumber: 'Commercial Registration Number',
         }
       }
     },
@@ -54,8 +72,25 @@ i18n.use(initReactI18next).init({
             photography: 'Fotografie',
             other: 'Altele',
             all: 'Toate operele de artă',
+        },
+        account: {
+          account: 'Contul tău',
+          password: 'Parolă',
+          name: 'Nume',
+          surname: 'Prenume',
+          email: 'Email',
+          phone: 'Telefon',
+          address: 'Adresă',
+          city: 'Oraș',
+          zipCode: 'Cod Poștal',
+          legalPerson: 'Persoană juridică',
+          stateProvince: 'Județ',
+          country: 'Țară',
+          companyName: 'Numele companiei',
+          vatNumber: 'Cod Unic',
+          companyAddress: 'Adresa companiei',
+          comercialRegistrationNumber: 'Număr de înregistrare Registrul Comerțului',
         }
-
       }
     }
   }

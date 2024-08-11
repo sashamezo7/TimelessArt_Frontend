@@ -2,14 +2,16 @@ import React, { useState } from "react";
 import "./navbar.css";
 import { Link } from "react-router-dom";
 import Login from "./Login";
-import "./login.css"
+import "./login.css";
 import Signin from "./Signin";
 import ResetPassword from "./ResetPassword";
 import CheckEmailMessage from "./CheckEmailMessage";
-import cartIcon from '../../../assets/cart.svg';
-import '../../../util/i18n'
-import { useTranslation } from 'react-i18next';
+import cartIcon from "../../../assets/cart.svg";
+import "../../../util/i18n";
+import { useTranslation } from "react-i18next";
 import ArtDropDown from "./ArtDropDown";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
   const [isRotated, setIsRotated] = useState(false);
@@ -17,48 +19,79 @@ const Navbar = () => {
   const [isSigninOpen, setIsSigninOpen] = useState(false);
   const [isResetPasswordOpen, setIsResetPasswordOpen] = useState(false);
   const [isEmailMessageOpen, setIsEmailMessageOpen] = useState(false);
+  const navigate = useNavigate();
 
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
+  const { t } = useTranslation();
 
-  const {t} = useTranslation();
+  const handleMouseEnter = () => {
+    setIsRotated(true);
+    setOpen(true);
+  };
 
-  const handleClick = () => {
-    setIsRotated(!isRotated);
+  const handleMouseLeave = () => {
+    setIsRotated(false);
+    setOpen(false);
   };
 
   return (
     <>
-      {isLoginOpen && <Login closeLogin={setIsLoginOpen} closeSignin={setIsSigninOpen} closeResetPassword={setIsResetPasswordOpen}/>}
-      {isSigninOpen && <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen}/>}
-      {isResetPasswordOpen && <ResetPassword closeResetPassword={setIsResetPasswordOpen} closeCheckEmailMessage={setIsEmailMessageOpen}/>}
-      {isEmailMessageOpen && <CheckEmailMessage closeCheckEmailMessage={setIsEmailMessageOpen}/>}
+      {isLoginOpen && (
+        <Login
+          closeLogin={setIsLoginOpen}
+          closeSignin={setIsSigninOpen}
+          closeResetPassword={setIsResetPasswordOpen}
+        />
+      )}
+      {isSigninOpen && (
+        <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen} />
+      )}
+      {isResetPasswordOpen && (
+        <ResetPassword
+          closeResetPassword={setIsResetPasswordOpen}
+          closeCheckEmailMessage={setIsEmailMessageOpen}
+        />
+      )}
+      {isEmailMessageOpen && (
+        <CheckEmailMessage closeCheckEmailMessage={setIsEmailMessageOpen} />
+      )}
       <div className="button-container-navbar">
         <Link to="/cart">
           <img src={cartIcon} alt="Cart Icon" className="cart-icon" />
         </Link>
-        <button className="button-navbar-signin" onClick={() => setIsSigninOpen(true)}>{t('signin.createAccount')}</button>
-        <button className="button-navbar-login" onClick={() => setIsLoginOpen(true)}>{t('signin.authenticate')}</button>
+        <button
+          className="button-navbar-signin"
+          onClick={() => setIsSigninOpen(true)}
+        >
+          {t("signin.createAccount")}
+        </button>
+        <button
+          className="button-navbar-login"
+          onClick={() => setIsLoginOpen(true)}
+        >
+          {t("signin.authenticate")}
+        </button>
       </div>
       <div className="red-line-container"></div>
 
-      <div className="navbar-container">
+      <div className="navbar-container" onMouseLeave={handleMouseLeave}>
         <div className="navbar-frame">
           <nav className="navbar">
             <div className="logo">
               <h1>Logo</h1>
             </div>
             <div className="links">
-              <Link to="/">{t('navbar.home')}</Link>
-              <Link onMouseEnter={() => setOpen(true)}>
-                {t('navbar.art')}
+              <Link to="/">{t("navbar.home")}</Link>
+              <Link to='/art' onMouseEnter={handleMouseEnter}>
+                {t("navbar.art")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="14"
                   height="7"
                   viewBox="0 0 10 5"
                   fill="none"
-                  className={isRotated ? 'rotate' : ''}
+                  className={isRotated ? "rotate" : ""}
                 >
                   <path
                     fillRule="evenodd"
@@ -68,32 +101,28 @@ const Navbar = () => {
                   />
                 </svg>
               </Link>
-              <Link to="/about">{t('navbar.exhibitions')}</Link>
-              <Link to="/about">{t('navbar.aboutUs')}</Link>
-              <Link to="/contact">Contact</Link>
-              {open && <ArtDropDown closeArtDropDown={setOpen}/>}
 
+              <Link to="/about">{t("navbar.exhibitions")}</Link>
+              <Link to="/about">{t("navbar.aboutUs")}</Link>
+              <Link to="/contact">Contact</Link>
             </div>
           </nav>
         </div>
+        <AnimatePresence>
+          {open && (
+            <motion.div
+              initial={{ opacity: 0, y: 0 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              <ArtDropDown closeArtDropDown={setOpen} />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </>
   );
 };
-
-const FlyoutLink = ({ children, href, FlyoutContent }) => {
-  const [open, setOpen] = useState(false);
-
-  return (
-    <div
-      onMouseEnter={() => setOpen(true)}
-      className="fkide"
-    >
-      <a href={href}>{children}</a>
-      {open && <FlyoutContent onMouseLeave = {() => setOpen(false)}/>}
-    </div>
-  );
-};
-
 
 export default Navbar;

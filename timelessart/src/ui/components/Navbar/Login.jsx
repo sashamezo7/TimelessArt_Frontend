@@ -1,13 +1,25 @@
 import React, { useState } from "react";
 import "./login.css";
-import '../../../util/i18n'
+import '../../../util/i18n';
 import { useTranslation } from 'react-i18next';
+import { login } from "../../../lib/api/AutentificareInregistrare/autentificare";
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
-
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const {t, i18n} = useTranslation();
+  const { t } = useTranslation();
+  const navigate = useNavigate();
+
+  const handleLogin = async () => {
+    try {
+      const response = await login(email, password);
+      localStorage.setItem('authToken', response.token);
+      navigate('/');
+    } catch (error) {
+      alert(error.message || 'An error occurred during login');
+    }
+  };
 
   return (
     <div className="modal-background">
@@ -17,7 +29,6 @@ const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
             <path d="M8 23.75L6.25 22L13.25 15L6.25 8L8 6.25L15 13.25L22 6.25L23.75 8L16.75 15L23.75 22L22 23.75L15 16.75L8 23.75Z" fill="black" />
           </svg>
         </button>
-
         <div className="login-title">
           <p>{t('signin.authenticate')}</p>
         </div>
@@ -47,10 +58,10 @@ const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
         </div>
 
         <div className="text-login-container">
-          <p className="text-login" onClick={() => {closeLogin(false), closeResetPassword(true)}}>{t('signin.resetPassword')}</p>
-          <p className="text-login" onClick={() => {closeLogin(false), closeSignin(true)}}>{t('signin.createAccount')}</p>
+          <p className="text-login" onClick={() => { closeLogin(false); closeResetPassword(true); }}>{t('signin.resetPassword')}</p>
+          <p className="text-login" onClick={() => { closeLogin(false); closeSignin(true); }}>{t('signin.createAccount')}</p>
         </div>
-        <button className="button-login">{t('signin.authenticate')}</button>
+        <button className="button-login" onClick={handleLogin}>{t('signin.authenticate')}</button>
       </div>
     </div>
   );

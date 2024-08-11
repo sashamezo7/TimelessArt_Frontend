@@ -1,0 +1,25 @@
+.account-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.title-account-frame {
+    display: flex;
+    justify-content: center;
+    top: 1px;
+    width: 100%;
+    z-index: 10;
+    position: relative;
+    top: -50px;
+}
+.title-account{
+    color: var(--text-color-black);
+    text-align: center;
+    font-family: "Abhaya Libre ExtraBold";
+    font-size: 64px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+}
