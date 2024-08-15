@@ -2,11 +2,23 @@ import React, { useState } from "react";
 import "./resetPassword.css";
 import '../../../util/i18n'
 import { useTranslation } from 'react-i18next';
+import { resetPassword, ResetPasswordWithToken } from "../../../lib/api/AutentificareInregistrare/autentificare";
+import { useNavigate } from "react-router-dom";
 
 const ResetPassword = ({closeResetPassword, closeCheckEmailMessage}) => {
 
   const [email, setEmail] = useState('');
   const {t, i18n} = useTranslation();
+  const navigate = useNavigate();
+  const handleResetPassword = async () => {
+    try {
+      const response = await resetPassword(email);
+      localStorage.setItem('email', response.email);
+      navigate('/');
+    } catch (error) {
+      alert(error.message || 'An error occurred during login');
+    }
+  };
 
   return (
     <div className="modal-background">
@@ -33,7 +45,7 @@ const ResetPassword = ({closeResetPassword, closeCheckEmailMessage}) => {
             />
           </div>
         </div>
-        <button className="button-reset-password" onClick={() => {closeCheckEmailMessage(true), closeResetPassword(false)}}>{t('signin.resetPassword')}</button>
+        <button className="button-reset-password" onClick={handleResetPassword}>{t('signin.resetPassword')}</button>
       </div>
     </div>
   );

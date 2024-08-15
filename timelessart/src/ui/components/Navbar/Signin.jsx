@@ -2,13 +2,25 @@ import './signin.css'
 import { useState, useTransition } from 'react';
 import '../../../util/i18n'
 import { useTranslation } from 'react-i18next';
+import { creatAccount } from "../../../lib/api/AutentificareInregistrare/autentificare";
+import { useNavigate } from "react-router-dom";
 
 const Signin = ({closeSignin, closeLogin}) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('')
   const [password1, setPassword1] = useState('');
   const {t, i18n} = useTranslation();
+  const navigate = useNavigate();
 
+  const handleSignin = async () => {
+    try {
+      const response = await creatAccount(email, password,password1);
+      localStorage.setItem('authToken', response.token);
+      navigate('/');
+    } catch (error) {
+      alert(error.message || 'An error occurred during login');
+    }
+  };
   return (
     <div className="modal-background">
       <div className="signin-frame">
@@ -60,7 +72,7 @@ const Signin = ({closeSignin, closeLogin}) => {
            <p className="text-login" onClick={() => { closeSignin(false); closeLogin(true); }}>{t('signin.authenticate')}</p>
         </div>
        
-        <button className="button-login">{t('signin.createAccount')}</button>
+        <button className="button-login" onClick={handleSignin}>{t('signin.createAccount')}</button>
       </div>
     </div>
   );
