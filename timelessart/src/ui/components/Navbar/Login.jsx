@@ -15,7 +15,7 @@ const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
     try {
       const response = await login(email, password);
       localStorage.setItem('authToken', response.token);
-      navigate('/');
+      navigate('/account');
     } catch (error) {
       alert(error.message || 'An error occurred during login');
     }

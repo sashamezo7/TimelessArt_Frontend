@@ -33,12 +33,12 @@ i18n.use(initReactI18next).init({
           account: 'Account',
           password: 'Password',
           name: 'Name',
-          surname: 'Surname',
+          firstName: 'First name',
           email: 'Email',
           phone: 'Phone',
           address: 'Address',
           city: 'City',
-          zipCode: 'Zip Code',
+          postalCode: 'Postal Code',
           legalPerson: 'Legal person',
           stateProvince: 'State/province',
           country: 'Country',
@@ -46,6 +46,8 @@ i18n.use(initReactI18next).init({
           vatNumber: 'VAT Number',
           companyAddress: 'Company Address',
           comercialRegistrationNumber: 'Commercial Registration Number',
+          birthDate:'Birthday',
+          Save:'Save'
         }
       }
     },
@@ -77,12 +79,12 @@ i18n.use(initReactI18next).init({
           account: 'Contul tău',
           password: 'Parolă',
           name: 'Nume',
-          surname: 'Prenume',
+          firstName: 'Prenume',
           email: 'Email',
           phone: 'Telefon',
           address: 'Adresă',
           city: 'Oraș',
-          zipCode: 'Cod Poștal',
+          postalCode: 'Cod Poștal',
           legalPerson: 'Persoană juridică',
           stateProvince: 'Județ',
           country: 'Țară',
@@ -90,6 +92,8 @@ i18n.use(initReactI18next).init({
           vatNumber: 'Cod Unic',
           companyAddress: 'Adresa companiei',
           comercialRegistrationNumber: 'Număr de înregistrare Registrul Comerțului',
+          birthDate:'Zi de nastere',
+          Save:'Salvare'
         }
       }
     }
