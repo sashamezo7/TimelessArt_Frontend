@@ -1,17 +1,16 @@
+import { AnimatePresence, motion } from "framer-motion";
 import React, { useState } from "react";
-import "./navbar.css";
-import { Link } from "react-router-dom";
-import Login from "./Login";
-import "./login.css";
-import Signin from "./Signin";
-import ResetPassword from "./ResetPassword";
-import CheckEmailMessage from "./CheckEmailMessage";
+import { useTranslation } from "react-i18next";
+import { Link, useNavigate } from "react-router-dom";
 import cartIcon from "../../../assets/cart.svg";
 import "../../../util/i18n";
-import { useTranslation } from "react-i18next";
 import ArtDropDown from "./ArtDropDown";
-import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from 'react-router-dom';
+import CheckEmailMessage from "./CheckEmailMessage";
+import Login from "./Login";
+import "./login.css";
+import "./navbar.css";
+import ResetPassword from "./ResetPassword";
+import Signin from "./Signin";
 
 const Navbar = () => {
   const [isRotated, setIsRotated] = useState(false);
@@ -37,13 +36,14 @@ const Navbar = () => {
 
   return (
     <>
-      {isLoginOpen && (
-        <Login
+      {isLoginOpen 
+      ? <Login
           closeLogin={setIsLoginOpen}
           closeSignin={setIsSigninOpen}
           closeResetPassword={setIsResetPasswordOpen}
         />
-      )}
+      : null
+    }
       {isSigninOpen && (
         <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen} />
       )}
@@ -83,7 +83,7 @@ const Navbar = () => {
             </div>
             <div className="links">
               <Link to="/">{t("navbar.home")}</Link>
-              <Link to='/art' onMouseEnter={handleMouseEnter}>
+              <Link to="/art" onMouseEnter={handleMouseEnter}>
                 {t("navbar.art")}
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

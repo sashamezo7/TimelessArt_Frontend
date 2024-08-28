@@ -15,6 +15,7 @@
   /* Asigură-te că frame-ul ocupă toată lățimea dropdown-ului */
   .art-drop-down-frame {
     width: 100%; /* Lățimea completă a dropdown-ului */
+    height: auto;
   }
   
   /* Conținutul dropdown-ului */
@@ -65,4 +66,3 @@
     text-decoration: underline; /* Adaugă un efect de hover pentru elementele de link */
     color: var(--secondary-color);
   }
-  

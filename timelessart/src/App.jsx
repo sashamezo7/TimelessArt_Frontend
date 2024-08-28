@@ -5,6 +5,8 @@ import i18n from './util/i18n';
 import HomePage from './ui/pages/Home/HomePage.jsx';
 import AccountPage from './ui/pages/Account/AccountPage.jsx';
 import ResetPasswordWithTokenPage from './ui/pages/ResetPasswordWithToken/ResetPasswordWithTokenPage.jsx';
+import Shop from './ui/pages/Shop/Shop.jsx';
+import ArtworkDetail from './ui/pages/Shop/ArtworkDetail.jsx';
 
 
 
@@ -29,6 +31,8 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/account" element={<AccountPage/>}/>
         <Route path="/reset-password" element={<ResetPasswordWithTokenPage />} />
+        <Route path='/shop' element={<Shop/>} />
+        <Route path='/shop/:id' element={<ArtworkDetail/>} />
         <Route
           path="*"
           element={<h1 style={notFoundStyles}>Page not found eror 404</h1>}

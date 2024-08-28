@@ -48,6 +48,9 @@ i18n.use(initReactI18next).init({
           comercialRegistrationNumber: 'Commercial Registration Number',
           birthDate:'Birthday',
           Save:'Save'
+        },
+        shop: {
+          addToCart: 'Add to cart'
         }
       }
     },
@@ -95,6 +98,9 @@ i18n.use(initReactI18next).init({
           birthDate:'Zi de nastere',
           Save:'Salvare'
         }
+      },
+      shop: {
+        addToCart: 'Adaugă în coș'
       }
     }
   }
