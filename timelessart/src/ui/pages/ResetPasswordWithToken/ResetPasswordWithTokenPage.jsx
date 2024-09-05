@@ -14,8 +14,6 @@ const ResetPasswordWithTokenPage = () => {
     
     return (
         <>
-        <Navbar/>
-        
         <div className="reset-password-container">
         <ResetPasswordWithTokenComponent />
         </div>

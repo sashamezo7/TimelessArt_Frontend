@@ -31,3 +31,16 @@ export const getAllArtworks = async () =>{
         console.error('Error fetching artworks:', error);
     }
 }
+
+export const getArtworkById = async (id) =>{
+    try{
+        const response = await axios.get(`${URL}/by/${id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+            }
+        })
+        return response.data;
+    }catch(error){
+        console.error('Error fetching artwork by id:', error);
+    }
+}

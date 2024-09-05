@@ -1,12 +1,13 @@
 import './App.css';
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import i18n from './util/i18n';
+import i18n from './util/i18n.js';
 import HomePage from './ui/pages/Home/HomePage.jsx';
 import AccountPage from './ui/pages/Account/AccountPage.jsx';
 import ResetPasswordWithTokenPage from './ui/pages/ResetPasswordWithToken/ResetPasswordWithTokenPage.jsx';
 import Shop from './ui/pages/Shop/Shop.jsx';
 import ArtworkDetail from './ui/pages/Shop/ArtworkDetail.jsx';
+import Navbar from './ui/components/Navbar/Navbar.jsx';
 
 
 
@@ -27,6 +28,7 @@ function App() {
 
   return (
     <Router>
+      <Navbar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/account" element={<AccountPage/>}/>

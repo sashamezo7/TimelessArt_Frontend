@@ -4,7 +4,6 @@ import {
   getAllArtworksBYTypeData,
   getAllArtworks,
 } from "../../../lib/api/ArtworksData/artworkData.jsx";
-import Navbar from "../../components/Navbar/Navbar.jsx";
 import Grid from "../components/Grid/Grid.jsx";
 import { useLocation } from "react-router-dom";
 
@@ -28,7 +27,7 @@ const Shop = () => {
         } else {
           response = await getAllArtworks();
         }
-        console.log(response);
+        //console.log(response);
 
         if (Array.isArray(response)) {
           setArtworks(response);
@@ -51,7 +50,6 @@ const Shop = () => {
 
   return (
     <>
-      <Navbar />
       <Grid artworkArray={artworks} />
     </>
   );

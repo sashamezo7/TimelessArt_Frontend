@@ -1,5 +1,5 @@
 import { AnimatePresence, motion } from "framer-motion";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import { Link, useNavigate } from "react-router-dom";
 import cartIcon from "../../../assets/cart.svg";
@@ -18,11 +18,23 @@ const Navbar = () => {
   const [isSigninOpen, setIsSigninOpen] = useState(false);
   const [isResetPasswordOpen, setIsResetPasswordOpen] = useState(false);
   const [isEmailMessageOpen, setIsEmailMessageOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
   const [open, setOpen] = useState(false);
 
   const { t } = useTranslation();
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    setIsAuthenticated(!!token);
+  }, []);
+
+  const handleLogout = () => {
+    localStorage.removeItem('authToken');
+    setIsAuthenticated(false);
+    navigate('/');
+  };
 
   const handleMouseEnter = () => {
     setIsRotated(true);
@@ -34,16 +46,20 @@ const Navbar = () => {
     setOpen(false);
   };
 
+  const updateAuthenticationStatus = (status) => {
+    setIsAuthenticated(status);
+  };
+
   return (
     <>
-      {isLoginOpen 
-      ? <Login
+      {isLoginOpen ? (
+        <Login
           closeLogin={setIsLoginOpen}
           closeSignin={setIsSigninOpen}
           closeResetPassword={setIsResetPasswordOpen}
+          onLoginSuccess={() => updateAuthenticationStatus(true)}
         />
-      : null
-    }
+      ) : null}
       {isSigninOpen && (
         <Signin closeSignin={setIsSigninOpen} closeLogin={setIsLoginOpen} />
       )}
@@ -60,18 +76,34 @@ const Navbar = () => {
         <Link to="/cart">
           <img src={cartIcon} alt="Cart Icon" className="cart-icon" />
         </Link>
-        <button
-          className="button-navbar-signin"
-          onClick={() => setIsSigninOpen(true)}
-        >
-          {t("signin.createAccount")}
-        </button>
-        <button
-          className="button-navbar-login"
-          onClick={() => setIsLoginOpen(true)}
-        >
-          {t("signin.authenticate")}
-        </button>
+        {isAuthenticated ? (
+          <>
+            <button
+              className="button-navbar-signin"
+              onClick={() => navigate("/account")}
+            >
+              {t("account.account")}
+            </button>
+            <button className="button-navbar-login" onClick={handleLogout}>
+              {t("navbar.logout")}
+            </button>
+          </>
+        ) : (
+          <>
+            <button
+              className="button-navbar-signin"
+              onClick={() => setIsSigninOpen(true)}
+            >
+              {t("signin.createAccount")}
+            </button>
+            <button
+              className="button-navbar-login"
+              onClick={() => setIsLoginOpen(true)}
+            >
+              {t("signin.authenticate")}
+            </button>
+          </>
+        )}
       </div>
       <div className="red-line-container"></div>
 

@@ -5,7 +5,7 @@ import TransitionGrow from '../components/TransitionGrow/TransitionGrow'
 const HomePage = () => {
     return (
         <>
-        <Navbar />
+        
         </>
     );
 };

@@ -28,6 +28,8 @@ i18n.use(initReactI18next).init({
             photography: 'Photography',
             other: 'Other',
             all: 'All artworks',
+            logout: 'Sign Out'
+
         },
         account: {
           account: 'Account',
@@ -77,6 +79,7 @@ i18n.use(initReactI18next).init({
             photography: 'Fotografie',
             other: 'Altele',
             all: 'Toate operele de artă',
+            logout: 'Deconectare'
         },
         account: {
           account: 'Contul tău',

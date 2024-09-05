@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 import { login } from "../../../lib/api/AutentificareInregistrare/autentificare";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
+const Login = ({ closeLogin, closeSignin, closeResetPassword, onLoginSuccess }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const { t } = useTranslation();
@@ -15,7 +15,10 @@ const Login = ({ closeLogin, closeSignin, closeResetPassword }) => {
     try {
       const response = await login(email, password);
       localStorage.setItem('authToken', response.token);
-      navigate('/account');
+      closeLogin(false);
+      onLoginSuccess();
+      //navigate('/account');
+
     } catch (error) {
       alert(error.message || 'An error occurred during login');
     }
