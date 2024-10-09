@@ -1,9 +1,52 @@
-.description-artwork-shop{
-    margin-top: 10%;
-}
-.button-artwork-detail-shop{
-    margin-top: 10%;
-}
-.price-artwork-detail-shop{
-    margin-bottom: 10%;
-}
+.container-artwork {
+    background-color: transparent;
+    padding: 24px;
+  }
+  
+  .card-artwork {
+    display: flex;
+    background-color: #fff;
+  }
+  
+  .card-media-artwork {
+    width: 100%;
+    height: auto;
+    max-height: 700px;
+    object-fit: contain;
+    object-position: center;
+
+  }
+  
+  .box-artwork {
+    background-color: var(--light-grey-color);
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 70%;
+    padding: 40px;
+    box-sizing: border-box;
+    max-height: 700px;
+  }
+  .box-artwork .typography-title{
+    font-size: 40px;
+  }
+  
+  .typography-title {
+    color: var(--dark-grey-color);
+  }
+  
+  .description-artwork-shop .typography-body {
+    color: var(--dark-grey-color);
+    font-size: 20px;
+  }
+  
+  .price-artwork-detail-shop {
+    color: var(--dark-grey-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  
+
+  

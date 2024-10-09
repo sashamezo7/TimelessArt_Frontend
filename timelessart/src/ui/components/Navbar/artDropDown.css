@@ -29,7 +29,7 @@
   
   .art-drop-down-content p {
     color: var(--text-color-white);
-    font-family: "Abhaya Libre ExtraBold";
+    font-family: 'Roboto';
     font-size: 60px;
     font-style: normal;
     font-weight: 800;
@@ -55,7 +55,7 @@
     margin: 0; /* Elimină marginile pentru a muta textul mai sus */
     padding: 10px 0; /* Adaugă padding pentru spațiere între elemente */
     font-size: 25px;
-    font-family: "Abhaya Libre ExtraBold";
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 100;
     line-height: normal;

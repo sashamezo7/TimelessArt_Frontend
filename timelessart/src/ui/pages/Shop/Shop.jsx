@@ -7,6 +7,7 @@ import {
 import Grid from "../components/Grid/Grid.jsx";
 import { useLocation } from "react-router-dom";
 
+
 const Shop = () => {
   const [artworks, setArtworks] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -15,19 +16,20 @@ const Shop = () => {
   const searchParams = new URLSearchParams(location.search);
   const typeArtwork = searchParams.get("typeArtwork");
 
+
+
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
         setLoading(true);
         let response;
 
-        // Verifică dacă `typeArtwork` este prezent în URL
+      
         if (typeArtwork) {
           response = await getAllArtworksBYTypeData(typeArtwork);
         } else {
           response = await getAllArtworks();
         }
-        //console.log(response);
 
         if (Array.isArray(response)) {
           setArtworks(response);
@@ -45,7 +47,7 @@ const Shop = () => {
 
     fetchArtworks();
   }, [typeArtwork]);
-  if (loading) return null;
+  if (loading) return <div className="loader"></div>;
   if (error) return <p>{error}</p>;
 
   return (

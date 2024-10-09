@@ -1,0 +1,32 @@
+.rectangle-artist-description {
+    min-width: 300px; /* Lățimea minimă */
+    max-width: 90%; /* Lățimea maximă se poate extinde */
+    max-height: 400px; /* Înălțimea maximă se poate extinde */
+    border: 1px solid #ccc; /* Poți schimba culoarea bordurii */
+    border-radius: 8px; /* Opțional, pentru colțuri rotunjite */
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+    justify-content: flex-start; /* Aliniază conținutul la început */
+    padding: 20px; /* Spațiu intern */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Umbră opțională */
+    background-color: #c42626; /* Culoare de fundal */
+    overflow: auto; /* Asigură-te că conținutul nu depășește dreptunghiul */
+  }
+  
+  .avatar-container {
+    margin-right: 20px; /* Spațiu între avatar și text */
+    margin-left: 20px;
+
+  }
+  
+  .text-container {
+    flex: 1; /* Permite textului să ocupe restul spațiului disponibil */
+  }
+  
+  .text-content {
+    margin: 0; /* Elimină marginile pentru text */
+    text-align: left; /* Alinierea textului la stânga */
+  }
+  

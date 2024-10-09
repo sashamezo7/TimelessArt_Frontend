@@ -94,11 +94,12 @@ const ShopCard = React.memo(({ imageUrl, artworkTitle, price, id }) => {
             whiteSpace: "nowrap",
             textAlign: "center",
             marginBottom: "8px",
+            fontFamily: "Roboto",
           }}
         >
           {artworkTitle}
         </Typography>
-        <Typography fontSize="lg" fontWeight="lg" sx={{ marginBottom: "8px" }}>
+        <Typography fontSize="lg" fontWeight="lg" sx={{ marginBottom: "8px", fontFamily: "Roboto" }}>
           €{price}
         </Typography>
         <Button
@@ -106,8 +107,9 @@ const ShopCard = React.memo(({ imageUrl, artworkTitle, price, id }) => {
           size="md"
           aria-label="Add to cart"
           sx={{
-            fontWeight: 600,
-            fontSize: "0.7rem",
+            fontWeight: 500,
+            fontSize: "0.8rem",
+            fontFamily: "Roboto",
             color: "var(--primary-color)",
             borderColor: "var(--primary-color)",
             "&:hover": {
