@@ -28,7 +28,7 @@ function App() {
 
   return (
     <Router>
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/account" element={<AccountPage/>}/>

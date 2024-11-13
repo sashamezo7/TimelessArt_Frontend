@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getArtworkById } from "../../../lib/api/ArtworksData/artworkData";
+import ArtworkListImage from "../components/ArtworkListImage/ArtworkListImage";
 import ArtistDescription from "../components/ArtistDescription/ArtistDescription";
 import "./artworkDetail.css";
 
@@ -21,7 +22,7 @@ const ArtworkDetail = () => {
       } catch (error) {
         alert(error.message);
       } finally {
-        setLoading(false); // Oprește loader-ul după ce datele au fost procesate
+        setLoading(false);
       }
     };
 
@@ -30,17 +31,18 @@ const ArtworkDetail = () => {
     }
   }, [id]);
 
-  // Afișează loader-ul dacă artwork este null sau încă se încarcă
   if (loading || !artwork) {
     return <div className="loader"></div>;
   }
 
-  // Afișează componentele doar după ce artwork a fost încărcat
   return (
     <>
-      <ArtworkComponent artworkDetail={artwork} />
-      <div className="image-artist-shop-detail">
-        <ArtistDescription />
+      <div className="container-artwork-page">
+        <ArtworkComponent artworkDetail={artwork} />
+        <div className="image-artist-shop-detail">
+          <ArtistDescription />
+        </div>
+        <ArtworkListImage />
       </div>
     </>
   );

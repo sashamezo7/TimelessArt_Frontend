@@ -14,7 +14,10 @@ const Signin = ({closeSignin, closeLogin}) => {
 
   const handleSignin = async () => {
     try {
-      const response = await creatAccount(email, password,password1);
+      if(password1!=password){
+        throw alert('Passwords do not match');
+      }
+      const response = await creatAccount(email, password);
       localStorage.setItem('authToken', response.token);
       navigate('/');
     } catch (error) {

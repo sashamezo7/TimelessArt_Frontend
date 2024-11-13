@@ -1,51 +1,119 @@
 .container-artwork {
-    background-color: transparent;
     padding: 24px;
+    background-color: transparent;
   }
   
   .card-artwork {
     display: flex;
-    background-color: #fff;
+    justify-content: center;
+    background-color: transparent;
   }
   
-  .card-media-artwork {
-    width: 100%;
-    height: auto;
-    max-height: 700px;
-    object-fit: contain;
-    object-position: center;
+  .artwork-image-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 750px; /* Înălțimea maximă a imaginii */
 
   }
   
-  .box-artwork {
-    background-color: var(--light-grey-color);
-    border-radius: 16px;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    width: 70%;
-    padding: 40px;
-    box-sizing: border-box;
-    max-height: 700px;
-  }
-  .box-artwork .typography-title{
-    font-size: 40px;
+  .card-media-artwork {
+    max-height: 750px;
+    width: auto; /* ajustează înălțimea pentru a păstra proporțiile */
+    object-fit: contain;
   }
   
-  .typography-title {
+  
+  .box-artwork {
+    background-color: var(--dark-background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 750px;
+    width: 100%; 
+    padding: 40px;
+    box-sizing: border-box;
+    overflow: auto;
+    object-fit: contain;
+
+    
+  }
+  .box-artwork .typography-title{
+    font-size: 1.8em;
+    display: flex;
     color: var(--dark-grey-color);
   }
   
   .description-artwork-shop .typography-body {
     color: var(--dark-grey-color);
-    font-size: 20px;
+    font-size: 1.1em;
   }
   
-  .price-artwork-detail-shop {
+  .box-artwork .price-artwork-detail-shop {
     color: var(--dark-grey-color);
-    margin-top: 10px;
-    margin-bottom: 10px;
+    font-size: 1.8em;
   }
+  .separator-line-artwork-description {
+    width: 100%;
+    height: 1px;
+    background-color: var(--secondary-color, #d1aa29); /* Folosește --secondary-color */
+    margin-bottom: 40px;
+  }
+  
+
+  @media (max-width: 901px) and(min-width: 769px){
+    .container-artwork{
+      display: flex;
+      flex-direction: row; 
+      justify-content: center;
+    }
+    .artwork-image-text-container{
+      display: flex;
+      justify-content: center;
+    }
+    .card-media-artwork{
+      width: 60% !important;
+    }
+    .box-artwork {
+      width: 20%;
+    }
+  
+  }
+
+  @media (max-width: 768px) {
+    .container-artwork{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      
+    }
+    .artwork-image-text-container{
+      display: flex;
+      justify-content: center;
+    }
+    .card-artwork{
+      width: 40%;
+      flex-wrap: wrap;
+    }
+    .box-artwork {
+      width: 40%;
+      flex-wrap: wrap;
+    }
+
+  }
+
+  @media (max-width: 480px) {
+
+    .card-artwork{
+      width: 100%;
+    }
+    .box-artwork {
+      width: 100%;
+    }
+
+
+ 
+}
 
   
 

@@ -1,3 +1,26 @@
-.image-artist-shop-detail{
-    margin-top: 15%;
+.container-artwork-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centrează pe orizontală */
+    justify-content: center; /* Centrează pe verticală */
+    width: 100%;
+  }
+  
+  .image-artist-shop-detail {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center; /* Centrează pe orizontală */
+    width: 100%;
+    margin-bottom: 40px;
+  }
+@media (max-width: 768px){
+    .image-artist-shop-detail{
+        margin-top: 0;
+    }
 }
+@media (max-width: 480px) {
+    .image-artist-shop-detail{
+        margin-top: 0;
+    }
+}
+

@@ -4,59 +4,65 @@ import ButtonBig from "../ButtonBig/ButtonBig";
 
 const DescriptionArtwork = ({ artworkDetail }) => {
   return (
-    <Grid item xs={12} md={6}>
-      <Box className="box-artwork">
-        <Typography
-          variant="h3"
-          gutterBottom
-          className="typography-title roboto-bold"
-          style={{ paddingBottom: "15%" }} // Spațiu suplimentar între elemente
-        >
-          {artworkDetail.title}
-        </Typography>
-        <div className="description-artwork-shop">
-          
+    <Grid item xs={12} sm={7} md={6}>
+      <div className="artwork-image-text-container">
+        <Box className="box-artwork">
           <Typography
-            variant="body2"
-            className="typography-body roboto-regular"
-            style={{ paddingBottom: "3%" }} // Spațiu suplimentar între elemente
+            variant="h3"
+            gutterBottom
+            className="typography-title roboto-bold"
+            style={{ paddingBottom: "40px" }}
           >
-            Technique: {artworkDetail.technique}
+            {artworkDetail.title}
           </Typography>
-          <Typography
-            variant="body1"
-            className="typography-body roboto-regular"
-            style={{ paddingBottom: "3%" }} // Spațiu suplimentar între elemente
-          >
-            Type: {artworkDetail.artworkType}
-          </Typography>
-          <Typography
-            variant="body1"
-            className="typography-body roboto-regular"
-            style={{ paddingBottom: "3%" }} // Spațiu suplimentar între elemente
-          >
-            Frame: {artworkDetail.frame ? "Yes" : "No"}
-          </Typography>
-          <Typography
-            variant="body1"
-            className="typography-body roboto-regular"
-            style={{ paddingBottom: "15%" }} // Spațiu suplimentar între elemente
-          >
-            Dimensions: {artworkDetail.width} x {artworkDetail.height} cm
-          </Typography>
-        </div>
 
-        <Typography
-          className="price-artwork-detail-shop roboto-bold"
-          variant="h4"
-          style={{ paddingBottom: "5%" }} // Spațiu suplimentar între elemente
-        >
-          Price: €{artworkDetail.price}
-        </Typography>
+          <div className="separator-line-artwork-description"></div>
 
-        <ButtonBig/>
-        
-      </Box>
+          <div className="description-artwork-shop">
+            <Typography
+              variant="body2"
+              className="typography-body roboto-regular"
+              style={{ paddingBottom: "20px" }}
+            >
+              Technique: {artworkDetail.technique}
+            </Typography>
+            <Typography
+              variant="body1"
+              className="typography-body roboto-regular"
+              style={{ paddingBottom: "20px" }}
+            >
+              Type: {artworkDetail.artworkType}
+            </Typography>
+            <Typography
+              variant="body1"
+              className="typography-body roboto-regular"
+              style={{ paddingBottom: "20px" }}
+            >
+              Frame: {artworkDetail.frame ? "Yes" : "No"}
+            </Typography>
+            <Typography
+              variant="body1"
+              className="typography-body roboto-regular"
+              style={{ paddingBottom: "40px" }}
+            >
+              Dimensions: {artworkDetail.width} x {artworkDetail.height} cm
+            </Typography>
+          </div>
+
+          <div className="separator-line-artwork-description"></div>
+
+
+          <Typography
+            className="price-artwork-detail-shop roboto-regular"
+            variant="h4"
+            style={{ paddingBottom: "40px" }}
+          >
+            Price: €{artworkDetail.price}
+          </Typography>
+
+          <ButtonBig />
+        </Box>
+      </div>
     </Grid>
   );
 };

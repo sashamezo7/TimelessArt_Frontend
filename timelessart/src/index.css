@@ -4,6 +4,7 @@
 /* Global styles */
 :root {
   --background-color: rgb(250, 248, 244);
+  --dark-background: rgb(240, 238, 234);
   --primary-color: #9B4242;
   --secondary-color: #d1aa29;
   --text-color-black: #090909;
@@ -53,9 +54,9 @@
   width: 100px;
   aspect-ratio: 1;
   margin: 0 auto; /* Centrează dreptunghiul orizontal */
-position: absolute; /* Poziționează dreptunghiul în centru */
-top: 50%; /* Poziționează dreptunghiul în centrul vertical */
-left: 50%;
+  position: absolute; /* Poziționează dreptunghiul în centru */
+  top: 50%; /* Poziționează dreptunghiul în centrul vertical */
+  left: 50%;
   display: grid;
   grid: 50%/50%;
   color: var(--primary-color);

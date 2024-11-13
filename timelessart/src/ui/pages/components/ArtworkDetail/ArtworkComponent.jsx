@@ -14,7 +14,7 @@ export default function ArtworkComponent({ artworkDetail }) {
   return (
     <Suspense fallback={<div className="loader"></div>}>
       <Container maxWidth="lg" className="container-artwork">
-        <Grid container spacing={2}>
+        <Grid container spacing={10}>
           <ImageArtwork artworkDetail={artworkDetail} />
 
           <DescriptionArtwork artworkDetail={artworkDetail} />
