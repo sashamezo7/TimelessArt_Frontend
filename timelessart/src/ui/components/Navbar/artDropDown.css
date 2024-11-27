@@ -1,30 +1,52 @@
-/* Asigură-te că dropdown-ul se întinde pe întreaga lățime a viewport-ului */
 .art-drop-down-container {
-    position: fixed; /* Utilizează fixed pentru a-l menține în poziția dorită pe ecran */
-    top: 0; /* Plasează dropdown-ul imediat sub navbar */
-    left: 0;
-    width: 100vw; /* Lățimea completă a viewport-ului */
-    background-color: var(--primary-color);
-    z-index: 1000; /* Asigură-te că dropdown-ul este deasupra altor elemente */
-    transform: translateY(-10px); /* Începe puțin mai sus pentru efectul de slide-in */
-    transition: opacity 0.3s, visibility 0.3s, transform 0.3s; /* Adaugă tranziții pentru o apariție lină */
-    margin-top: 170px;
-  }
+  position: fixed;
+  top: 160px;
+  left: 0;
+  width: 100%;
+  background-color: var(--dark-grey-color);
+  z-index: 2000;
+  min-height: 300px;
+  filter: none;
+  overflow: hidden;
+  margin: 0;
+}
+.art-drop-down-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  z-index: -1; /* Fundalul trebuie să fie sub conținut */
+  opacity: 0.4;
+  filter: none;
+  transition: opacity 0.7s ease-in-out;
+}
+
+.art-drop-down-background.current {
+  opacity: 0.4; /* Fundalul curent */
+}
+
+.art-drop-down-background.next {
+  opacity: 0; /* Fundalul următor */
+}
+
+
   
-  
-  /* Asigură-te că frame-ul ocupă toată lățimea dropdown-ului */
   .art-drop-down-frame {
-    width: 100%; /* Lățimea completă a dropdown-ului */
-    height: auto;
+    width: 100%;
+    height: 300px;
+    z-index: 2;
   }
   
-  /* Conținutul dropdown-ului */
   .art-drop-down-content {
     display: flex;
     flex-direction: column;
-    padding: 0px 10%; /* Ajustează padding-ul lateral pentru mai mult spațiu */
-    padding-top: 20px; /* Adaugă spațiu în partea de sus */
-    padding-bottom: 20px; /* Adaugă spațiu în partea de jos */
+    padding: 0px 10%; 
+    padding-top: 20px; 
+    padding-bottom: 20px; 
   }
   
   .art-drop-down-content p {
@@ -34,15 +56,16 @@
     font-style: normal;
     font-weight: 800;
     line-height: normal;
-    margin: 0; /* Elimină marginile pentru a avea un control mai bun */
+    margin: 0; 
     margin-bottom: 20px;
+    z-index: 3;
   }
   
   .art-drop-down-link-container {
     display: flex;
     flex-direction: row;
     gap: 15%;
-    flex-wrap: wrap; /* Permite elementelor să treacă pe linie următoare dacă e necesar */
+    flex-wrap: wrap; 
   }
   
   .art-drop-down-link {
@@ -52,17 +75,18 @@
   }
   
   .art-drop-down-link p {
-    margin: 0; /* Elimină marginile pentru a muta textul mai sus */
-    padding: 10px 0; /* Adaugă padding pentru spațiere între elemente */
+    margin: 0; 
+    padding: 10px 0; 
     font-size: 25px;
     font-family: "Roboto";
     font-style: normal;
-    font-weight: 100;
+    font-weight: 400;
     line-height: normal;
     cursor: pointer;
   }
   
   .art-drop-down-link p:hover {
-    text-decoration: underline; /* Adaugă un efect de hover pentru elementele de link */
+    text-decoration: underline; 
     color: var(--secondary-color);
   }
+

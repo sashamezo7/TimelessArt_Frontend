@@ -13,8 +13,7 @@
   align-items: center;
   justify-content: center;
   padding: 1%; /* Padding mai mic pentru mobile */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  background-color: var(--light-grey-color);
+  background-color: var(--dark-background);
   overflow: auto;
 }
   

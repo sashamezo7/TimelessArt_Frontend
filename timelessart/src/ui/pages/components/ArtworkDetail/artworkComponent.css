@@ -14,12 +14,14 @@
     justify-content: center;
     align-items: center;
     height: 750px; /* Înălțimea maximă a imaginii */
+    width: auto;
 
   }
   
   .card-media-artwork {
     max-height: 750px;
-    width: auto; /* ajustează înălțimea pentru a păstra proporțiile */
+   
+    height: auto;
     object-fit: contain;
   }
   

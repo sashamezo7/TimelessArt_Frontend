@@ -31,9 +31,9 @@ const Navbar = () => {
   }, []);
 
   const handleLogout = () => {
-    localStorage.removeItem('authToken');
+    localStorage.removeItem("authToken");
     setIsAuthenticated(false);
-    navigate('/');
+    navigate("/");
   };
 
   const handleMouseEnter = () => {
@@ -108,6 +108,11 @@ const Navbar = () => {
       <div className="red-line-container"></div>
 
       <div className="navbar-container" onMouseLeave={handleMouseLeave}>
+        {open && (
+          
+            <ArtDropDown closeArtDropDown={setOpen} />
+        )}
+
         <div className="navbar-frame">
           <nav className="navbar">
             <div className="logo">
@@ -140,18 +145,6 @@ const Navbar = () => {
             </div>
           </nav>
         </div>
-        <AnimatePresence>
-          {open && (
-            <motion.div
-              initial={{ opacity: 0, y: 0 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: 0 }}
-              transition={{ duration: 0.3 }}
-            >
-              <ArtDropDown closeArtDropDown={setOpen} />
-            </motion.div>
-          )}
-        </AnimatePresence>
       </div>
     </>
   );

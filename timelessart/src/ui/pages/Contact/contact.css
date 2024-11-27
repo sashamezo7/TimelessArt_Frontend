@@ -1,0 +1,38 @@
+
+.contact-email-container {
+    position: relative;
+    left: 100px; 
+    top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+    width: 500px;
+    height: 750px;
+    border: none;
+    padding: 10px;
+  }
+ 
+  .contact-button-container {
+    display: flex;
+    justify-content: center; 
+    margin-top: 15px;
+}
+.text-box-contact{
+  width: 479px;
+}
+.contact-button-container {
+    display: flex;
+    justify-content: center; 
+    width: 100%;
+    margin-top: 10px;
+  }
+  .title-contact-email{
+    font-size: 35px;
+    padding-left: 10px;
+
+  }
+  .text-contact{
+    font-size: 18px;
+    padding-left: 10px;
+  }

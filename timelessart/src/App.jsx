@@ -8,6 +8,7 @@ import ResetPasswordWithTokenPage from './ui/pages/ResetPasswordWithToken/ResetP
 import Shop from './ui/pages/Shop/Shop.jsx';
 import ArtworkDetail from './ui/pages/Shop/ArtworkDetail.jsx';
 import Navbar from './ui/components/Navbar/Navbar.jsx';
+import Contact from './ui/pages/Contact/Contact.jsx';
 
 
 
@@ -35,6 +36,7 @@ function App() {
         <Route path="/reset-password" element={<ResetPasswordWithTokenPage />} />
         <Route path='/shop' element={<Shop/>} />
         <Route path='/shop/:id' element={<ArtworkDetail/>} />
+        <Route path='/contact' element={<Contact/>} />
         <Route
           path="*"
           element={<h1 style={notFoundStyles}>Page not found eror 404</h1>}

@@ -13,7 +13,7 @@
 /* Navbar container */
 .navbar-container {
   display: flex;
-  width: 80%; /* Fixed width for the navbar container */
+  width: 100%; /* Fixed width for the navbar container */
   max-width: 2000px; /* Optional: Set a max-width to prevent it from becoming too wide on large screens */
   height: 99px;
   padding: 20px 59px;

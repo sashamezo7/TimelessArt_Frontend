@@ -1,6 +1,6 @@
 /* Ensure the body and html take up the full height of the screen */
 html, body {
-  background: rgb( 250 248 244);
+  background: var(--background-color);
 }
 
 

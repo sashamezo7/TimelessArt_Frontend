@@ -3,7 +3,9 @@
 
 /* Global styles */
 :root {
-  --background-color: rgb(250, 248, 244);
+ /* --background-color: rgb(250, 248, 244);*/
+  --background-color: #fff;
+
   --dark-background: rgb(240, 238, 234);
   --primary-color: #9B4242;
   --secondary-color: #d1aa29;
