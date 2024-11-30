@@ -2,10 +2,10 @@ import axios from 'axios';
 import { Base_URL } from '../BaseUrl';
 
 const URL = Base_URL + '/accounts'
+const URLLogin = Base_URL + '/api/auth'
 
-// Funcția pentru autentificare
 export const login = async (email, password) => {
-        const response = await axios.post(`${URL}/login`, { email, password }, {
+        const response = await axios.post(`${URLLogin}/login`, { email, password }, {
             headers: {
                 'Content-Type': 'application/json',
             }
@@ -18,6 +18,7 @@ export const creatAccount = async (email, password) => {
         headers: {
             'Content-Type': 'application/json',
         }
+        
     });
     return response.data;
 

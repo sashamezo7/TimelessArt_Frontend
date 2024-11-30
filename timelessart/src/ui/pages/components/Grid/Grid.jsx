@@ -10,6 +10,7 @@ const ShopCard = lazy(() => import("../ShopCard/ShopCard"));
 export default function SpacingGrid({ artworkArray }) {
   const [spacing, setSpacing] = React.useState(2);
   const navigate = useNavigate();
+  console.log(artworkArray);
 
   return (
     <Grid sx={{ flexGrow: 1 }} container spacing={spacing}>

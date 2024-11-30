@@ -19,6 +19,8 @@ const Signin = ({closeSignin, closeLogin}) => {
       }
       const response = await creatAccount(email, password);
       localStorage.setItem('authToken', response.token);
+      console.log("Account created successfully");
+      closeSignin(false);
       navigate('/');
     } catch (error) {
       alert(error.message || 'An error occurred during login');
